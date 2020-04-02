@@ -1,0 +1,4 @@
+/**app.wxss**/
+@import './style/weui.wxss';
+@import '/style/animate.wxss';
+@import'./style/font-awesome.min.wxss'

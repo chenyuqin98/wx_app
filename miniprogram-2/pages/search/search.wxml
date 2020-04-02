@@ -1,0 +1,69 @@
+<!--pages/search/search.wxml-->
+<!-- <import src='./../common/movie/movieRow' /> -->
+
+<view class='container page-search'>
+  <view>
+    <view class="search-bar">
+    <!-- <button bindtap="Search"><image class='icon' src='/assets/images/icon-search.png' mode='widthFix' /></button> -->
+      <image class='icon' src='/assets/images/icon-search.png' mode='widthFix' bindtap="Search"/>
+      <input type="text"
+        placeholder="输入书名/作者/ISBN号" value="{{inputVal}}" 
+        focus bindinput="inputTyping" confirm-type='search'
+        bindconfirm='inputConfirm'
+      />
+      <block wx:if="{{inputVal.length > 0}}">
+        <button class="button-nostyle" bindtap="clearInput">
+          <icon type="clear" size="14" />
+        </button>
+      </block>
+    </view>
+  </view>
+  <view class='content'>
+    <scroll-view scroll-y bindscrolltolower='loadMore'
+      enable-back-to-top scroll-top='{{scrollTop}}' scroll-with-animation
+    >
+      <view wx:if='{{!result}}' class='paragraph'>
+        <view wx:if="{{history && history.length}}" class='search-block'>
+          <view class='block-header'>
+            <text class='block-title'>最近搜索</text>
+            <image class='icon' src='/assets/images/icon-delete.png' bindtap="clearHistory" />
+          </view>
+          <view class='block-body'>
+            <button wx:for='{{history}}' wx:key='index' class='button--round' data-keywords='{{item}}' bindtap='quickSearch'>{{item}}
+            </button>
+          </view>
+        </view>
+        <view class='search-block'>
+          <view class='block-header'>
+            <text class='block-title'>热门搜索</text>
+          </view>
+          <view class='block-body'>
+            <view wx:for='{{hot}}' wx:key='{{index}}' data-keywords='{{item}}' bindtap="quickSearch" class="button--round">
+              {{item}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+<view wx:for-items="{{newsList}}" wx:key="pk" class="list">    
+    <view class='list-title'>pk:{{item.pk}}   title:{{item.fields.title}}   type:{{item.fields.type}}   website:{{item.fields.website}}   author:{{item.fields.author}}   publisher:{{item.fields.publisher}}   year:{{item.fields.year}}   url:{{item.fields.url}}   cover_url:{{item.fields.cover}}</view>    
+</view> 
+
+
+
+      <!-- <view wx:elif='{{result.length>0}}'>
+        <block wx:for='{{result}}' wx:key='id'>
+          <navigator url='/pages/pMovie/pages/details/details?title={{item.title}}&id={{item.id}}&origin=mtime'>
+            <template is="item-movie_row" data="{{...item}}" />
+          </navigator>
+        </block>
+      </view>
+      <view wx:else class='none'>
+        <image src='/assets/images/search_empty_icon.png' mode='widthFix' />
+        <text>抱歉，未找到相关影视</text>
+        <text>输入电影名/导演/演员/编剧搜索</text>
+      </view> -->
+    </scroll-view>
+  </view>
+</view>
