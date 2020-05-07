@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/series/series",
+    "components/book/book",
+    "pages/search/search",
     "pages/home/home",
     "pages/list/list",
     "pages/index/index",
     "pages/register/register",
-    "pages/search/search",
-    "pages/mypa/mypa",
     "pages/logs/logs"
   ],
   "window": {
@@ -17,22 +18,26 @@
   },
   "tabBar": {
     "selectedColor": "#ff5777",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "搜索",
-      "iconPath": "assets/MainIcon/search.png",
-      "selectedIconPath": "assets/MainIcon/search_active.png"
-    },{
-      "pagePath": "pages/list/list",
-      "text": "丛书推荐",
-      "iconPath": "assets/MainIcon/list.png",
-      "selectedIconPath": "assets/MainIcon/list_active.png"
-    },{
-      "pagePath": "pages/index/index",
-      "text": "我的",
-      "iconPath": "assets/MainIcon/mine.png",
-      "selectedIconPath": "assets/MainIcon/mine_active.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "搜索",
+        "iconPath": "assets/MainIcon/search.png",
+        "selectedIconPath": "assets/MainIcon/search_active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "丛书推荐",
+        "iconPath": "assets/MainIcon/list.png",
+        "selectedIconPath": "assets/MainIcon/list_active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "assets/MainIcon/mine.png",
+        "selectedIconPath": "assets/MainIcon/mine_active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

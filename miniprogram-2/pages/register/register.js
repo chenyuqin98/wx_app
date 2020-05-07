@@ -58,7 +58,7 @@ Page({
     }
     else{
       wx.request({
-        url: 'http://192.168.0.102:8080/wx_login/wx_regist/',
+        url: 'http://192.168.0.102:8080/wx/regist/',
         data: {
           name: name,
           pwd: pwd

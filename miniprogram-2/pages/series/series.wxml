@@ -1,0 +1,23 @@
+<!--pages/series/series.wxml-->
+<view class="series_top" id="header">
+  <view class="image_box">
+    <image src="../../assets/photos/1000.jpg" mode="aspectFit"></image>
+  </view>
+  <view class="info">
+    <text class="series">丛书：{{series}}</text>
+    <text class="print">出版方：{{print}}</text>
+    <text>简介：{{info}}</text>
+  </view>
+</view>
+
+<scroll-view scroll-y='true'  style="height: {{scrollViewHeight}}px" class="series_body">
+  <book/>
+  <book/>
+  <book/>
+  <book/>
+  <book/>
+  <book/>
+</scroll-view>
+
+
+

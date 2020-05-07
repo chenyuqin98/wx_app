@@ -35,7 +35,7 @@ Page({
     console.log(e);
     this.setData({ disabled: true });
     wx.request({
-      url: 'http://192.168.0.102:8080/wx_login/',	//获取服务器地址，此处为本地地址
+      url: 'http://192.168.0.102:8080/wx/login/',	//获取服务器地址，此处为本地地址
       header: {
         "content-type": "application/x-www-form-urlencoded"		//使用POST方法要带上这个header,转化成query string 
       },

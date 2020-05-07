@@ -1,0 +1,37 @@
+/* pages/series/series.wxss */
+page{
+  background-color: #65565D;
+  overflow: hidden;
+}
+.series_top{
+  width: 750rpx;
+  height: 300rpx;
+  display: grid;
+  grid-column-gap: 10rpx;
+  grid-template-columns: 240rpx 500rpx;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-bottom: 2rpx double white;
+  background-color: #ed556a;
+}
+.image_box image{
+  height: 270rpx;
+  width: 240rpx;
+}
+.info{
+  display: grid;
+  grid-template-rows: 1fr 1fr 7fr;
+}
+.info text{
+  color: white;
+  font-size: 19rpx;
+}
+.series{
+  font-size: 25rpx;
+  font-weight: bolder;
+}
+.print{
+  font-size: 25rpx;
+  border-bottom: 1rpx dashed gray;
+  font-weight: bolder;
+}
