@@ -1,0 +1,148 @@
+<view class="list-body">
+  <view class="newbook-list">
+    <view class="title"> 
+      <image class="rec-picture" src="../../assets/photos/book-rec.png" mode="aspectFit"></image>
+    </view>
+    <view class="carousel">
+      <view class="book-list" style="left:{{leftDistance}}rpx">
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img3.doubanio.com/view/photo/l/public/p2539709310.webp' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>创造日本</view>
+            <view class='book-author'>伊恩·布鲁玛</view>
+          </view>
+        </view>
+         <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img9.doubanio.com/view/subject/l/public/s33615896.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>刺客列传</view>
+            <view class='book-author'>郑问</view>
+          </view>
+        </view>
+         <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img3.doubanio.com/view/subject/l/public/s33597571.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>异国绮谈</view>
+            <view class='book-author'>谷崎润一郎</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img3.doubanio.com/view/subject/s/public/s33606570.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>紫与黑</view>
+            <view class='book-author'> K.J.帕克</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img3.doubanio.com/view/subject/s/public/s33617432.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>火中遗物</view>
+            <view class='book-author'>玛丽安娜•恩里克斯</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img1.doubanio.com/view/subject/s/public/s33550747.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>三只忧伤的老虎</view>
+            <view class='book-author'>卡夫雷拉·因凡特</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img9.doubanio.com/view/subject/s/public/s29809876.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>塔尼奥斯巨岩</view>
+            <view class='book-author'>阿明·马洛夫</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img1.doubanio.com/view/subject/s/public/s33629418.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>第三帝国的兴亡</view>
+            <view class='book-author'>威廉·夏伊勒</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img1.doubanio.com/view/subject/s/public/s33603689.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>这辈子</view>
+            <view class='book-author'>高彩云</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img1.doubanio.com/view/subject/s/public/s33535249.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>烧纸</view>
+            <view class='book-author'>李沧东</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img1.doubanio.com/view/subject/s/public/s33607648.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>七个疯子</view>
+            <view class='book-author'>罗伯特·阿尔特</view>
+          </view>
+        </view>
+        <view class="nav-item" bindtap="toBook">
+          <image class='book-cover' src='https://img9.doubanio.com/view/subject/s/public/s33609726.jpg' mode='aspectFill'></image>
+          <view class='book-info'>
+            <view class='book-title'>万有引力之虹</view>
+            <view class='book-author'>托马斯·品钦</view>
+          </view>
+        </view>
+
+      </view>
+      <view class="slide-controls">
+        <view class="slide">
+          <view class="slide-dots" data-index="1" bindtap="handleSlide"></view>
+          <view class="slide-dots" data-index="2" bindtap="handleSlide"></view>
+          <view class="slide-dots" data-index="3" bindtap="handleSlide"></view>
+          <view class="slide-dots" data-index="4" bindtap="handleSlide"></view>
+        </view>
+        <view class="slide-btns">
+          <icon class="iconfont icon-zuojiantou" bindtap="handlePrev"></icon>
+          <icon class="iconfont icon-youjiantou" bindtap="handleNext"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="series-list">
+    <view class="rec-logo">
+      <image src="../../assets/photos/rec-logo.png" mode="aspectFit"></image>
+    </view>
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots='true' autoplay="true" interval="4000" duration="300">
+        <block wx:for="{{series}}" wx:key="{{series.id}}">
+          <swiper-item>
+            <view class="swiper-item" bindtap="toSeries">
+              <image src='{{item.image}}' webp="{{true}}" mode="aspectFit"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="writer-list">
+    <view class="rec-logo">
+      <image src="../../assets/photos/rec-author.png" mode="aspectFit"></image>
+    </view>
+    <view class="writer-info" bindtap="toSeries">
+      <view class="back-clip">
+        <image src="../../assets/photos/writer_1.jpg" mode="aspectFIt"></image>
+      </view>
+      <view class="writer-intro">
+        <text>伊莱娜·内米洛夫斯基，俄裔法国犹太人女作家,1903年出生于俄国基辅的一个乌克兰犹太银行家家庭，父亲是前莫斯科银行行长，母亲是一位没落贵族小姐。十月革命后，她移居巴黎，凭借其处女作小说《大卫·格德尔》（1929年）迎来了文学上的成功，紧接着，她又创作了小说《舞会》（1930年）。第二次世界大战的巴黎大逃亡之后，她躲在摩万的一个小镇里，后遭法国宪兵逮捕，1942年夏被杀害于奥斯维辛集中营。当时，她在十三岁的长女德尼斯带着一口箱子东躲西藏，箱子装着承载着痛苦的圣物：母亲的遗稿———直至今天才出版的《法兰西组曲》。</text>
+      </view>
+    </view>
+     <view class="writer-info" bindtap="toSeries">
+        <view class="back-clip">
+          <image src="../../assets/photos/writer_2.jpg" mode="aspectFIt"></image>
+        </view>
+        <view class="writer-intro">
+          <text>伊恩·麦克尤恩是英国文坛当前最具影响力的作家之一。1948年出生于英格兰的奥尔德肖特，毕业于布莱顿的萨塞克斯大学，后在东英吉利大学获硕士学位。一度投身于六十年代的反文化运动，后来对这一反理性主义的文化思潮感到厌倦，于1974年在伦敦定居下来。
+伊恩·麦克尤恩性格刚毅，思维敏捷，具有孜孜不倦的探求精神。他擅长以细腻、犀利而又疏冷的文笔勾绘现代人内在的种种不安和恐惧，积极探讨暴力、死亡、爱欲和善恶的问题。作品多为短篇小说，内容大都离奇古怪、荒诞不经，有“黑色喜剧”之称。许多作品反映性对人的主宰力量以及人性在性欲作用下的扭曲。</text>
+        </view>
+      </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,22 @@
+<!--pages/history/history.wxml-->
+<view class="head">
+   <text>共有{{number}}条下载记录</text>
+</view>
+<view class="body">
+  <history title='独霸中东'
+           author='雅科夫•卡茨(Yaakov Katz) '
+           year='2019-11'
+           publisher='浙江人民出版社'
+           cover='https://img9.doubanio.com/view/subject/l/public/s33523084.jpg'/>
+  <history title='七个疯子'
+           author='罗伯特·阿尔特'
+           year='2020-4'
+           publisher='四川文艺出版社'
+           cover='https://img1.doubanio.com/view/subject/s/public/s33607648.jpg'/>
+  <history title='万有引力之虹'
+           author='托马斯·品钦'
+           year='2020-4'
+           publisher='译林出版社'
+           cover='https://img9.doubanio.com/view/subject/s/public/s33609726.jpg'/>
+  <history/>
+</view>

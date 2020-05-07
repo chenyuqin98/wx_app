@@ -1,0 +1,9 @@
+<!--components/result/result.wxml-->
+<view class="result-box">
+  <view class='list-title'>{{pk}}.{{title}}</view>
+  <view class="list-intro">
+    <text>类别:{{type}}</text>
+    <text>作者:{{author}}</text>   
+  </view>    
+</view>
+

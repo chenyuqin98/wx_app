@@ -1,0 +1,44 @@
+/* components/history/history.wxss */
+.history-item {
+    padding-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 8rpx double wheat;
+}
+.history-item {
+    margin-bottom: 30rpx;
+}
+.history-intro {
+    display: flex;
+}
+.history-cover {
+    width: 200rpx;
+    height: 280rpx;
+    box-shadow: 10rpx 10rpx 30rpx rgba(0, 0, 0, .2)
+}
+.history-info {
+    max-width: 400rpx;
+    margin-left: 40rpx;
+}
+.history-txt {
+    background-color: #fafafa;
+    padding: 5rpx 10rpx;
+    font-size: 22rpx;
+    margin-bottom: 10rpx;
+    color: #0f95b0;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-title {
+    font-size: 50rpx;
+    color: #142334;
+    padding: 5rpx 10rpx;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10rpx;
+}

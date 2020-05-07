@@ -1,0 +1,26 @@
+<!--components/book/book.wxml-->
+<view class="BookBody">
+  <view class="grid">
+    <view class="Pic_Box">
+      <image class="Picture" src='{{picture}}' >图片></image>
+      <text class="Bookname">{{bookname}}</text>
+    </view>
+    <view class="Intro_Box">
+      <view class="Detail">
+        <view class="Author">{{author}}</view>
+        <view class="ISBN">ISBN:{{isbn}}</view>
+        <view class="Item">
+          <view class="Icon">
+            <image wx:if='{{isCollected}}' src='../../assets/MainIcon/book_collected.png' mode="aspectFit" bindtap="Book_collect"></image>
+             <image wx:if='{{!isCollected}}' src='../../assets/MainIcon/book_collect.png' mode="aspectFit" bindtap="Book_collect"></image>
+          </view>
+          <view class="Icon">
+             <image src="../../assets/MainIcon/book_download.png" mode="aspectFit" bindtap="Book_download"></image>
+          </view>
+        </view>
+      </view>
+      <view class="Introduction">{{introduction}}
+      </view>
+    </view>
+  </view>
+</view>

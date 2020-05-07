@@ -1,0 +1,57 @@
+<!--pages/upload/upload.wxml-->
+<view class="tifo">
+  <image src="../../assets/photos/logo-upload.png" mode="aspectFit"></image>
+</view>
+<view class="upload_form">
+  <view class="form_body">
+    <view class="form-item">
+      <text>书名</text>
+      <input value="{{Bookname}}" bindinput="handleInput1"></input>
+    </view>
+    <view class="form-item">
+      <text>作者</text>
+      <input Value="{{author}}" bindinput="handleInput2"></input>
+    </view>
+    <view class="form-item">
+      <text>出版社</text>
+      <input  Value="{{print}}" bindinput="handleInput3"></input>
+    </view>
+    <view class="form-item">
+      <text>出版年月</text>
+      <input placeholder="例：2012-04"  Value="{{date}}" bindinput="handleInput4"></input>
+    </view>
+    <view class="form-item">
+      <text>ISBN</text>
+      <input  Value="{{ISBN}}" bindinput="handleInput5"></input>
+    </view>
+    <view class="form-item">
+      <text>类型</text>
+      <input  Value="{{type}}" bindinput="handleInput6"></input>
+    </view>
+  </view>
+  <view class="form-intro">
+    <text>简介</text>
+    <textarea value="{{intro}}" bindinput="handleInput7"></textarea>
+  </view>
+  <text class="forget">图书文件</text>
+  <view class="form-file">
+    <view >{{filename}}</view>
+    <view class="Choosebtn" bindtap="fileChoose">选择文件</view>
+  </view>
+  <view class="form-cover">
+    <text>图书封面</text>
+    <view class="weui-uploader__bd">
+      <block wx:for="{{imagesList}}" wx:key="*this" >
+        <view class="weui-uploader__file">
+          <image class="weui-uploader__img" src="{{item}}"></image>
+        </view>
+      </block>
+      <view class="weui-uploader__input-box">
+        <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='imageChoose' name="images"></input>
+      </view>
+    </view>
+  </view>
+  <view class="submit" bindtap="handleSubmit">提交</view>
+</view>
+
+

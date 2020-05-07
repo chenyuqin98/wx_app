@@ -1,0 +1,96 @@
+/* pages/test/test.wxss */
+
+page{
+  height: 100%;
+  background-size:100% 100%;
+  background-image: url("https://hbimg.huabanimg.com/cac8ecaf556d8ee344a811a69cce22827f1c15214079c-LTd9bL_fw658");
+  background-repeat: no-repeat;
+}
+ 
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box; 
+} 
+.login-icon{
+  background-color: wheat;
+  flex: none;
+  margin: 0 auto;
+  height: 300rpx;
+}
+.login-img{
+  width: 750rpx;
+  opacity: 0.6; 
+  position: absolute;
+  z-index: -1; 
+  top: 0; 
+  left: 0rpx;
+  right: 0rpx;
+  height: 350rpx;
+  background: #22a2c3;
+  border-radius:100% / 0% 0% 60% 60%;
+}
+ 
+/*表单内容*/
+.login-from {
+  margin-top: 80rpx;
+  flex: auto;
+  height:100%;
+}
+.my_label{
+  width: 20%;
+}
+ 
+/* 输入框 */
+.myno{
+  width: 80%;
+  height: 80rpx;
+  margin: 0 auto;
+  border:1px solid #ccc;
+  border-radius: 50rpx;
+ 
+}
+.mypwd{
+  width: 80%;
+  height: 80rpx;
+  margin: 0 auto;
+  border:1px solid #ccc;
+  border-radius: 50rpx;
+  margin-top: 10rpx;
+}
+/*按钮*/
+.loginBtnView {
+  width: 100%;
+}
+.loginBtnView button{
+    width: 10rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loginBtn {
+  margin-left:auto;
+  margin-right:auto;
+  width: 60rpx;
+  margin-top: 15rpx;
+  border-radius: 30rpx;
+  border: 0.1rpx solid #ccc;
+}
+
+ 
+.nameImage, .keyImage {
+  margin-right: 10rpx;
+  width: 50rpx;
+  height: 50rpx
+}
+.word{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sentence{
+  text-align: center;
+  font-size: 30rpx;
+  text-decoration: underline;
+}

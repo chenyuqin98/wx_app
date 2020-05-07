@@ -1,0 +1,10 @@
+/* pages/collect/collect.wxss */
+.top{
+  background-color:#e2e1e4;
+  height:50rpx;
+  line-height: 50rpx;
+  align-items: center;
+}
+.top text{
+  font-size: 25rpx;
+}

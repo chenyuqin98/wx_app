@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<import src='/components/cell/cell' />
+<view class="container">
+  <view class="my_header">
+    <view class="bg"></view>
+    <view class="userinfo">
+      <view class="cell-left">
+        <view class="userinfo-avatar btn-opacity" bindtap="bindViewTap">
+          <open-data type='userAvatarUrl' />
+        </view>
+        <view class='userinfo__center'>
+          <open-data class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+          <view class='userinfo__extra'>{{motto}}</view>
+        </view>
+        <view class="userinfo__right">
+          <text class="protxt">{{exp_get}}/{{exp_need}}</text>
+          <progress percent="{{percent}}"  class="exp_pro" activeColor="#fbb957" stroke-width="12"/>
+        </view>
+      </view>
+      <view class='actions'>
+        <view class='actions-item btn-opacity shell'>
+          <image class='actions-item__icon' src='/assets/images/icon-shell.png' mode='aspectFit'></image>
+          <view class='actions-item__name'>贝壳余额：{{shell}}</view>
+        </view>
+        <view class='actions-item btn-opacity' bindtap="toHistory">
+          <image class='actions-item__icon' src='/assets/images/icon-card.png' mode='aspectFit'></image>
+          <view class='actions-item__name'>历史</view>
+        </view>
+        <view class='actions-item btn-opacity' bindtap="toCollect">
+          <image class='actions-item__icon' src='/assets/images/icon-achievement.png' mode='aspectFit'></image>
+          <view class='actions-item__name'>收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="my_body">
+    <button open-type="share" style="border: none;background-color: transparent;outline: none;padding:0;margin-left:0;font-weight:1">
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-message.png",title:"应用分享"}}' /></button> 
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-record.png",title:"资源上传",bindTap:"toUpload"}}' />
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-setting.png",title:"设置",bindTap:"toSetting"}}' />
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-feedback.png",title:"意见反馈"}}' />
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-about.png",title:"关于",bindTap:"toAbout"}}' />
+  </view>
+</view>

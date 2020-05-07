@@ -1,0 +1,13 @@
+<!--pages/register/register.wxml-->
+<view class="ImageBox"> 
+  <image src="../../assets/images/logo_2.png" mode="aspectFit"></image>
+  <text class="slogan">—————L i a n    S h a n—————</text>
+  <text class="slogan">专 注 于 提 供 电 子 书 下 载</text>
+</view>
+
+<view class="InputBox">
+  <input placeholder="请输入账号" bindinput="usernameinput"></input>
+  <input placeholder="请输入密码" bindinput="passwordinput" type="password"></input>
+  <input placeholder="请确认密码" bindinput="passwordconfirminput" type="password"></input>
+  <button style="width:500rpx;" bindtap="signin">注    册</button>
+</view>

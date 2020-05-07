@@ -1,0 +1,9 @@
+/* pages/history/history.wxss */
+page{
+  background-color: #e2c17c;
+}
+.head{
+  margin-bottom: 15rpx;
+  background-color: #847c74;
+  border-bottom: 2rpx white solid;
+}

@@ -1,0 +1,41 @@
+/* components/result/result.wxss */
+.result-box{
+  width: 670rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border:1px solid #f8b3d0;
+  background:#fff5fa;
+  padding-bottom: 10rpx;
+  border-radius: 20rpx;
+}
+.list-title{
+  height: 50rpx;
+  font-weight: 700;
+  line-height: 50rpx;
+  margin-left: 5rpx;
+  font-size: 40rpx;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-intro{
+  height: 20rpx;
+  line-height: 20rpx;
+  text-align: center;
+  margin-top: 15rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-intro text{
+  font-size: 18rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

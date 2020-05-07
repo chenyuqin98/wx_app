@@ -1,0 +1,12 @@
+<!--components/collected/collected.wxml-->
+<view bindtap="toBook" data-id="{{pk}}">
+   <view class="item-movie_row padding-surround btn-bg">
+     <image class="item-img" src="{{cover}}" mode="widthFix"></image>
+     <view class="item-info">
+       <text>{{title}}</text>
+       <text class='subtext'> {{author}}</text>
+       <text class='subtext'>{{publisher}}</text>
+       <text class='subtext'>{{ISBN}}</text>
+      </view>
+    </view>
+</view>

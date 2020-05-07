@@ -1,0 +1,17 @@
+<!--pages/about/index.wxml-->
+<view class='container self-honye'>
+  <view class='banner'>
+    <pre-image 
+      src='{{datas.image}}' 
+      mode='widthFix'
+      height='100%'
+      place-img='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588607525321&di=e985e2eb1c62823bf57f1bf522b219a2&imgtype=0&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F22130%2F22129410.jpg'
+    />
+  </view>
+
+  <view class='advert'>
+    <view>此小程序为南开大学商学院2016级管理科学与工程专业本科生刘家豪与陈虞钦携手开发。</view>
+    <view>《周礼》云：“太卜掌三易之法，一曰连山易，二曰归藏，三曰周易。
+其经卦皆八，其别皆六十有四。”其中连山易和归藏易，两千年来历代典籍鲜有记载，学术界无不认为其已失传，几成定论。此二易也成为中华文化领域里的一件千古之谜。历来学界以为，连山易是以艮卦开始，如山之连绵，故名连山。同时连山也象征着我们项目的数据库藏书之丰富。</view>
+  </view>
+</view>

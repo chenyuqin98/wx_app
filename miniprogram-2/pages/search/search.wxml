@@ -1,0 +1,56 @@
+<!--pages/search/search.wxml-->
+<view class='container page-search'>
+  <view class="header">
+    <view class="search-bar">
+      <image class='icon' src='/assets/images/icon-search.png' mode='widthFix' bindtap="Search"/>
+      <input type="text"
+        placeholder="输入书名/作者/ISBN号" value="{{inputVal}}" 
+        focus bindinput="inputTyping" confirm-type='search'
+        bindconfirm='inputConfirm'
+      />
+      <block wx:if="{{inputVal.length > 0}}">
+        <button class="button-nostyle" size="mini" bindtap="clearInput">
+          <icon type="clear" size="14" />
+        </button>
+      </block>
+    </view>
+  </view>
+  <view class='content'>
+    <view class="easy_search">
+      <view wx:if="{{history && history.length}}" class='search-block'>
+        <view class='block-header'>
+          <text class='block-title'>最近搜索</text>
+          <image class='icon' src='/assets/images/icon-delete.png' bindtap="clearHistory" />
+        </view>
+        <view class='block-body'>
+          <view wx:for='{{history}}' wx:key='index' class='button--round' data-keywords='{{item}}' bindtap='quickSearch'>{{item}}
+          </view>
+        </view>
+      </view>  
+      <view class='search-block'>
+        <view class='block-header'>
+          <text class='block-title'>热门搜索</text>
+        </view>
+        <view class='block-body'>
+          <view wx:for='{{hot}}' wx:key='{{index}}' data-keywords='{{item}}' bindtap="quickSearch" class="button--round">
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="result">
+    <view wx:for="{{newsList}}">
+      <result data-pk="{{item.pk}}"
+              pk="{{index+1}}"
+              title="{{item.fields.title}}"
+              type="{{item.fields.type}}"
+              author="{{item.fields.author}}"
+              cover="{{item.fields.cover}}"
+              publisher="{{item.fields.publisher}}"
+              url="{{item.fields.url}}"
+              year="{{item.fields.year}}"
+              bindtap="toBook"/>
+    </view>
+  </view>
+</view>

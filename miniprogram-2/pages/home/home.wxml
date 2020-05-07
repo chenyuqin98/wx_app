@@ -1,0 +1,17 @@
+
+
+
+<navigator url='/pages/search/search' hover-class='none'>
+  <view class="LogoBox">
+    <image src="../../assets/photos/logo_4.png" mode="aspectFit"></image>
+  </view> 
+  <view class='search-bar'>
+    <view class='search-radius btn-opacity'>
+      <image class='icon' src='/assets/images/icon-search.png' mode='aspectFit' />
+      <text>搜索</text>
+    </view>
+  </view>
+</navigator>
+<view class="timeView">
+  <text>{{nowTime}}</text>
+</view>

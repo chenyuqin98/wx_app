@@ -1,0 +1,12 @@
+<!--components/history/history.wxml-->
+<view class="history-item" data-id="{{pk}}" bindtap="toBook">
+    <view class="history-intro">
+        <image class="history-cover" src="{{cover}}"></image>
+        <view class="history-info">
+            <view class="history-title">{{title}}</view>
+            <view class="history-txt">作者：{{author}}</view>
+            <view class="history-txt">出版社：{{publisher}}</view>
+            <view class="history-txt">出版时间：{{year}}</view>
+        </view>
+    </view>
+</view>
