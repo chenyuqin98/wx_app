@@ -58,7 +58,7 @@ Page({
     }
     else{
       wx.request({
-        url: 'http://47.102.216.186/wx_login/wx_regist/',
+        url: 'http://47.102.216.186/wx/regist/',
         data: {
           name: name,
           pwd: pwd

@@ -36,7 +36,7 @@ Page({
     app.globalData.classifyid=e.detail.value.no
     this.setData({ disabled: true });
     wx.request({
-      url: 'http://47.102.216.186/wx_login/',	//获取服务器地址，此处为本地地址
+      url: 'http://47.102.216.186/wx/login/',	//获取服务器地址，此处为本地地址
       header: {
         "content-type": "application/x-www-form-urlencoded"		//使用POST方法要带上这个header,转化成query string 
       },

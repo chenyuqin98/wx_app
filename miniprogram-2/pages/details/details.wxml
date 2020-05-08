@@ -1,10 +1,11 @@
 <!--pages/details/details.wxml-->
+<page-meta name="referrer" content="never">
     <view class='block'>
       <view class='clip-img'>
         <image src="https://img1.doubanio.com/view/subject/s/public/s33599969.jpg" mode='widthFix' />
       </view>
       <view class='brief'>
-        <image class='img-mv' src='https://img1.doubanio.com/view/subject/s/public/s33599969.jpg' refer  mode='widthFix' />
+        <image class='img-mv' src="{{newsList[0].fields.cover}}" refer='' referrerPolicy="no-referrer"  mode='widthFix' />
         <view class='brief-info'>
           <view class='title'>
             {{newsList[0].fields.title}}
@@ -45,3 +46,4 @@
 美洲西班牙语文学的另一重要特征即是它永恒的见证：暴力与不公平的见证，集体与个体的见证，现实与虚构的见证，往昔与现今的见证。在美洲，写作总是兼有诗意与政治的功能，写作从来不是一种无谓的游戏，即便在表面看来最形式化的表达中，它也从不逃遁于幻觉中。 ——《理想藏书》
       </text>
     </view>
+</page-meta>
