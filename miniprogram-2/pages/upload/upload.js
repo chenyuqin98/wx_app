@@ -4,13 +4,14 @@ Page({
   data: {
     path: '',
     filename: '',
-    Bookname:'',
+    title:'',
     author:'',
     print:'',
     date:'',
-    ISBN:'',
+    website:'',
     intro:'',
     id:'',
+    user_id:'',
     type:'',
     imagesList:''
 
@@ -18,7 +19,8 @@ Page({
   onLoad: function (options) {
     console.log(app.globalData.classifyid)
     this.setData({
-      id: app.globalData.classifyid
+      id: app.globalData.classifyid,
+      user_id: app.globalData.classifyid
     })
 
   },
@@ -125,22 +127,24 @@ Page({
   handleSubmit:function(){
     console.log(this.data)
     wx.request({
-      url: 'http://47.102.216.186/wx/user_upload',
+      url: 'http://47.102.216.186/wx/user_upload/',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: 'POST',
-      data: {upload_books:JSON.stringify({
-        title: this.data.Bookname,
+      data: {
+        user_id: app.globalData.classifyid,
+        title: this.data.title,
         author: this.data.author,
         publisher: this.data.print,
         year: this.data.date,
-        ISBN: this.data.ISBN,
+        website: this.data.website,
+        // ISBN: this.data.ISBN,
         intro: this.data.intro,
-        user_id:this.data.id,
+        // user_id:this.data.id,
         cover:this.data.imagesList,
         url:this.data.path,
-        type:this.data.type})
+        type:this.data.type
       },
       success: function () {
         wx.showToast({
@@ -164,7 +168,7 @@ Page({
     console.log(e.detail.value)
     let that = this;
     that.setData({
-      Bookname: e.detail.value
+      title: e.detail.value
     })
   },
   handleInput2: function (e) {

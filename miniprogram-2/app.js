@@ -36,6 +36,7 @@ App({
   globalData: {
     userInfo: null,
     classifyid:'',
+    userid:'',
     LastLogintime:'',
     loginFre:0,
     downloadFre:0,

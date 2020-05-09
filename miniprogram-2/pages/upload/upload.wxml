@@ -6,7 +6,7 @@
   <view class="form_body">
     <view class="form-item">
       <text>书名</text>
-      <input value="{{Bookname}}" bindinput="handleInput1"></input>
+      <input value="{{title}}" bindinput="handleInput1"></input>
     </view>
     <view class="form-item">
       <text>作者</text>
@@ -33,23 +33,25 @@
     <text>简介</text>
     <textarea value="{{intro}}" bindinput="handleInput7"></textarea>
   </view>
-  <text class="forget">图书文件</text>
+  <text class="forget">图书地址（网盘）</text>
   <view class="form-file">
-    <view >{{filename}}</view>
-    <view class="Choosebtn" bindtap="fileChoose">选择文件</view>
+    <textarea value="{{filename}}" bindinput="handleInput8"></textarea>
+    <!-- <view >{{filename}}</view>
+    <view class="Choosebtn" bindtap="fileChoose">选择文件</view> -->
   </view>
   <view class="form-cover">
     <text>图书封面</text>
-    <view class="weui-uploader__bd">
-      <block wx:for="{{imagesList}}" wx:key="*this" >
+    <textarea value="{{imagesList}}" bindinput="handleInput9"></textarea>
+    <!-- <view class="weui-uploader__bd"> -->
+      <!-- <block wx:for="{{imagesList}}" wx:key="*this" >
         <view class="weui-uploader__file">
           <image class="weui-uploader__img" src="{{item}}"></image>
         </view>
       </block>
       <view class="weui-uploader__input-box">
         <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='imageChoose' name="images"></input>
-      </view>
-    </view>
+      </view> -->
+    <!-- </view> -->
   </view>
   <view class="submit" bindtap="handleSubmit">提交</view>
 </view>

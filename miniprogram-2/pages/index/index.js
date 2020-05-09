@@ -28,6 +28,7 @@ Page({
       motto: app.globalData.classifyid
     })
     console.log(this.data.motto)
+    console.log(app.globalData)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -2,7 +2,7 @@
 <page-meta name="referrer" content="never">
     <view class='block'>
       <view class='clip-img'>
-        <image src="https://img1.doubanio.com/view/subject/s/public/s33599969.jpg" mode='widthFix' />
+        <image src="{{newsList[0].fields.cover}}" mode='widthFix' />
       </view>
       <view class='brief'>
         <image class='img-mv' src="{{newsList[0].fields.cover}}" refer='' referrerPolicy="no-referrer"  mode='widthFix' />
@@ -31,7 +31,7 @@
     </view>
     <view class='block brief-summary'>
       <text class='subtitle'>《{{newsList[0].fields.title}}》的内容简介------------------\n</text>
-      <text class='summary'>◎“是我想太多，还是这世界太疯狂？”
+      <!-- <text class='summary'>◎“是我想太多，还是这世界太疯狂？”
 ◎ 毒丽场域疯子们的“蛮荒故事”，纳粹等现代性之殇的神奇预言
 ◎“阿根廷的陀思妥耶夫斯基”，拉美现代小说之父，罗伯特·阿尔特代表作
 ◎ 马尔克斯、博尔赫斯之先驱，胡里奥·科塔萨尔、罗伯特·波拉尼奥、胡安·卡洛斯·奥内蒂盛赞的伟大作家
@@ -44,6 +44,8 @@
 如果这些海岸上有人能被称为文学天才的话，那一定是罗伯特·阿尔特……我在谈论一个将在时间长河中留下名字的小说家……难以置信，他还不为当今大众所熟知。——胡安·卡洛斯·奥内蒂
 ——————————
 美洲西班牙语文学的另一重要特征即是它永恒的见证：暴力与不公平的见证，集体与个体的见证，现实与虚构的见证，往昔与现今的见证。在美洲，写作总是兼有诗意与政治的功能，写作从来不是一种无谓的游戏，即便在表面看来最形式化的表达中，它也从不逃遁于幻觉中。 ——《理想藏书》
+      </text> -->
+      <text class='summary'>{{newsList[0].fields.introduce}}
       </text>
     </view>
 </page-meta>
