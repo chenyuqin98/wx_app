@@ -35,6 +35,7 @@ Page({
     console.log(e);
     app.globalData.classifyid=e.detail.value.no
     this.setData({ disabled: true });
+
     wx.request({
       url: 'http://47.102.216.186/wx/login/',	//获取服务器地址，此处为本地地址
       header: {
@@ -79,6 +80,22 @@ Page({
         }
       }
     })
+    wx.request({
+      url: 'http://47.102.216.186/wx/show_user_info/',
+      header: { "Content-Type": "applciation/json" },
+      method: "GET",
+      data: {
+        user_id: app.globalData.classifyid
+      },
+      success: function (res) {
+        // console.log(res.data)
+        var json = JSON.parse(res.data)
+        // console.log(json[0].fields.level)
+        app.globalData.level = json[0].fields.level
+        app.globalData.exp = json[0].fields.exp
+        app.globalData.scores = json[0].fields.scores
+        console.log(app.globalData)
+      },})
   },
   /**
    * 生命周期函数--监听页面加载

@@ -11,6 +11,7 @@
         <view class='userinfo__center'>
           <open-data class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
           <view class='userinfo__extra'>{{motto}}</view>
+          <view class='userinfo__extra'>lv: {{level}}</view>
         </view>
         <view class="userinfo__right">
           <text class="protxt">{{exp_get}}/{{exp_need}}</text>

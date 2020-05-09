@@ -36,7 +36,9 @@ App({
   globalData: {
     userInfo: null,
     classifyid:'',
-    userid:'',
+    level:'',
+    exp:'',
+    scores:'',
     LastLogintime:'',
     loginFre:0,
     downloadFre:0,
