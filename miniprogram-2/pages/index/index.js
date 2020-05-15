@@ -143,4 +143,9 @@ Page({
       url: '/pages/upload/upload',
     })
   },
+  toTest(){
+    wx.navigateTo({
+      url: '/pages/test/test',
+    })
+  }
 })

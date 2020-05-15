@@ -39,7 +39,7 @@
     <template is='row-cell' data='{{iconPath:"/assets/images/icon-message.png",title:"应用分享"}}' /></button> 
     <template is='row-cell' data='{{iconPath:"/assets/images/icon-record.png",title:"资源上传",bindTap:"toUpload"}}' />
     <template is='row-cell' data='{{iconPath:"/assets/images/icon-setting.png",title:"设置",bindTap:"toSetting"}}' />
-    <template is='row-cell' data='{{iconPath:"/assets/images/icon-feedback.png",title:"意见反馈"}}' />
+    <template is='row-cell' data='{{iconPath:"/assets/images/icon-feedback.png",title:"意见反馈",bindTap:"toTest"}}' />
     <template is='row-cell' data='{{iconPath:"/assets/images/icon-about.png",title:"关于",bindTap:"toAbout"}}' />
   </view>
 </view>

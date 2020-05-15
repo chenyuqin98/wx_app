@@ -1,4 +1,5 @@
 // pages/test/test.js
+const app =getApp()
 Page({
 
   /**
@@ -14,23 +15,19 @@ Page({
    */
   onLoad: function (options) {
     var that =this
+    console.log(app.globalData.classifyid)
     wx.request({
-      url: 'http://47.102.216.186/wx/search_detail/',
+      url: 'http://47.102.216.186/wx/show_favo/',
       header: {
         "Content-Type": "applciation/json"
       },
       method: 'GET',
       data: {
-        id: that.data.pk
+        user_id: app.globalData.classifyid,
       },
       success: function (res) {
         console.log(res)
-        var json = JSON.parse(res.data)
-        console.log(json)
-        that.setData({
-          newsList: json
-        })
-      },
+       },
       fail: function (err) {
         console.log('调用失败')
         wx.showToast({
@@ -38,6 +35,16 @@ Page({
           icon: 'none',
           duration: 2000
         })
+      }
+    })
+    wx.request({
+      url: 'http://47.102.216.186/wx/show_all_series/',
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success:function(res){
+        console.log(res)
       }
     })
   },

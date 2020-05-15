@@ -1,4 +1,5 @@
 // pages/details/details.js
+const app = getApp()
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
     publisher:'四川文艺出版社',
     pubdates: '',
     fileSrc: "https://marxism.pku.edu.cn/docs/2019-12/20191231165721673467.xls",
-    newsList:''
+    newsList:'',
+    type:''
   },
 
   /**
@@ -37,7 +39,7 @@ Page({
         var json = JSON.parse(res.data)
         console.log(json)
         that.setData({
-          newsList: json
+          newsList: json,
         })
         console.log(that.data.newsList[0].fields.title)
       },
@@ -81,37 +83,34 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   handleCollect:function(){
+    console.log(this.data.newsList[0].fields.type)
+    console.log(this.data.pk)
     wx.request({
-      url: '',
-      data: {
-        bookid: '',
-      },
+      url: 'http://47.102.216.186/wx/add_favo/',
       header: {
-        'content-type': 'application/json' // 默认值
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      success(res) {
-        console.log(res.data)
+      method: 'POST',
+      data: {
+        user_id: app.globalData.classifyid,
+        book_id: this.data.pk, 
+        type: this.data.newsList[0].fields.type
+      },
+      success: function () {
+        wx.showToast({
+          title: '已收藏',
+          icon: 'none',
+          duration: 2000,
+        })
+      },
+      fail: function (err) {
+        console.log('调用失败')
+        wx.showToast({
+          title: '无法获取终端数据！',
+          icon: 'none',
+          duration: 2000
+        })
       }
     })
   },
