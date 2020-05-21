@@ -1,0 +1,37 @@
+<!--pages/recommand/recommand.wxml-->
+<page-meta name="referrer" content="never">
+    <view class='block'>
+      <view class='clip-img'>
+        <image src="http://47.102.216.186/wx/media/{{newsList[0].fields.cover}}" mode='widthFix' />
+      </view>
+      <view class='brief'>
+        <image class='img-mv' src="http://47.102.216.186/wx/media/{{newsList[0].fields.cover}}" refer='' referrerPolicy="no-referrer"  mode='widthFix' />
+        <view class='brief-info'>
+          <view class='title'>
+            {{newsList[0].fields.bookname}}
+          </view>
+          <view class='brief-time'>
+            <text>作者：{{newsList[0].fields.author}}
+                  ISBN:{{newsList[0].fields.isbn}}
+                  出版社：{{newsList[0].fields.publisher}}中国
+                  出版年: {{newsList[0].fields.year}}2020</text>
+          </view>
+          <view class='flex-align-center'>
+            <button class='button-nostyle flex-align-center button'>
+              <image class='icon' src='/assets/images/icon-addtolist.png' />
+              <text>收藏</text>
+            </button>
+            <button class='button-nostyle flex-align-center button' bindtap="handleDownload" data-src='http://47.102.216.186/wx/media/{{newsList[0].fields.url}}' data-name='{{newsList[0].fields.bookname}}.epub'>
+              <image class='icon' src='/assets/images/icon-download.png'/>
+              <text>下载</text>
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='block brief-summary'>
+      <text class='subtitle'>《 {{newsList[0].fields.bookname}}》的内容简介------------------\n</text>
+      <text class='summary'>{{newsList[0].fields.introduce}}
+      </text>
+    </view>
+</page-meta>

@@ -1,1 +1,28 @@
 /* pages/test/test.wxss */
+.btn_box{
+ width: 100%;
+ box-sizing: border-box;
+ padding: 30rpx 5%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ margin-top: -50rpx;
+}
+button{
+ margin-top: 50rpx;
+ height: 100rpx;
+ line-height: 100rpx;
+}
+.back{
+ width: 100%;
+ margin-top: 50rpx;
+ height: 100rpx;
+ line-height: 100rpx;
+ color: #FFF;
+ background-color: #E64340;
+ box-sizing: border-box;
+ font-size: 18px;
+ text-align: center;
+ border-radius: 10rpx;
+}

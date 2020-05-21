@@ -139,9 +139,7 @@ Page({
         publisher: this.data.print,
         year: this.data.date,
         website: this.data.website,
-        // ISBN: this.data.ISBN,
         intro: this.data.intro,
-        // user_id:this.data.id,
         cover:this.data.imagesList,
         url:this.data.path,
         type:this.data.type
@@ -211,6 +209,20 @@ Page({
     let that = this;
     that.setData({
       intro: e.detail.value
+    })
+  },
+  handleInput8: function (e) {
+    console.log(e.detail.value)
+    let that = this;
+    that.setData({
+      filename: e.detail.value
+    })
+  },
+  handleInput9: function (e) {
+    console.log(e.detail.value)
+    let that = this;
+    that.setData({
+      imagesList: e.detail.value
     })
   },
 })

@@ -1,22 +1,23 @@
 // pages/list/list.js
+const app = getApp()
+import request from '../../utils/network.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    series: [{ id: 1, image:"https://img1.doubanio.com/view/photo/l/public/p2600013009.webp"},
-      { id: 2, image: "https://img3.doubanio.com/view/photo/l/public/p2600013011.webp" },
-      { id: 3, image: "https://img9.doubanio.com/view/photo/l/public/p2600013006.webp" },
-      { id: 4, image: "https://img9.doubanio.com/view/photo/l/public/p2600013004.webp"},
-      { id: 5, image: "https://img3.doubanio.com/view/photo/l/public/p2600013003.webp" }],
+    series: [],
     leftDistance:0,
+    newList:[],
   },
 
    /*生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.showNewbook().then(res=>{
+      this.showSeries();
+    })
   },
 
   /**
@@ -30,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -101,12 +102,61 @@ Page({
   toSeries:function(e){
     console.log(e)
     wx.navigateTo({
-      url: '/pages/series/series?id='+this.data.series[0],
+      url: '/pages/series/series?id=' + e.currentTarget.dataset.pk + '&name='
+        +e.currentTarget.dataset.name + '&src='+e.currentTarget.dataset.src,
     })
   },
-  toBook: function () {
+  toBook: function (e) {
     wx.navigateTo({
-      url: '/pages/details/details',
+      url: '/pages/recommand/recommand?pk=' + e.currentTarget.dataset.pk,
     })
   },
+  showSeries:function(){
+    let that =this
+    request({
+      url: 'http://47.102.216.186/wx/show_all_series/',
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      data: {
+        series_id: "1"
+      },
+      method: 'GET'
+    }).then(res => {
+      var json = JSON.parse(res.data)
+      that.setData({
+        series: json
+      })
+      console.log(that.data.series)
+    }).catch(err => {
+      console.log(err)
+    })
+  },
+  showNewbook:function(){
+    let that = this
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: 'http://47.102.216.186/wx/show_one_recommend/',
+        header: {
+          "Content-Type": "applciation/json"
+        },
+        data: {
+          series_id: "1"
+        },
+        method: 'GET',
+        success: function (res) {
+          var json = JSON.parse(res.data)
+          that.setData({
+            newList: json
+          })
+          console.log(that.data.newList)
+          resolve(res)
+        },
+        fail: function (err) {
+          console.log(err)
+          reject(err)
+        }
+      })
+    })  
+  }
 }) 

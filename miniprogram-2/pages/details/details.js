@@ -97,12 +97,13 @@ Page({
         book_id: this.data.pk, 
         type: this.data.newsList[0].fields.type
       },
-      success: function () {
+      success: function (res) {
         wx.showToast({
           title: '已收藏',
           icon: 'none',
           duration: 2000,
         })
+        console.log(res)
       },
       fail: function (err) {
         console.log('调用失败')

@@ -21,7 +21,7 @@
               <image class='icon' src='/assets/images/icon-addtolist.png' />
               <text>收藏</text>
             </button>
-            <button class='button-nostyle flex-align-center button' bindtap="handleDownload" data-src='{{fileSrc}}'>
+            <button class='button-nostyle flex-align-center button' bindtap="handleDownload" data-src='{{newsList[0].fields.url}}'>
               <image class='icon' src='/assets/images/icon-download.png' />
               <text>下载</text>
             </button>
@@ -31,20 +31,6 @@
     </view>
     <view class='block brief-summary'>
       <text class='subtitle'>《{{newsList[0].fields.title}}》的内容简介------------------\n</text>
-      <!-- <text class='summary'>◎“是我想太多，还是这世界太疯狂？”
-◎ 毒丽场域疯子们的“蛮荒故事”，纳粹等现代性之殇的神奇预言
-◎“阿根廷的陀思妥耶夫斯基”，拉美现代小说之父，罗伯特·阿尔特代表作
-◎ 马尔克斯、博尔赫斯之先驱，胡里奥·科塔萨尔、罗伯特·波拉尼奥、胡安·卡洛斯·奥内蒂盛赞的伟大作家
-——————————
-本书是阿根廷著名作家罗伯特·阿尔特的长篇小说代表作，描述男主人公在社会底层挣扎并逐渐走向崩溃的过程。故事集中在三天时间，各色人物纷纷登场，从一件绑架案折射出20世纪20年代阿根廷乃至拉美的社会现实生活。作家以精湛的文笔对主人公进行了大量的心理描摹，并通过主人 公的眼睛变 形地透视了身边的现实和种种人物，其混乱怪诞之感，正应了魔幻现实主义的画风。有续集《喷火器》。
-——————————
-阿尔特无疑是一位伟大的作家……他是拉美第一位真正的都市小说家……这就是激发文学创作的力量。——《卫报》
-他的视野与布宜诺斯艾利斯那一帮家伙昏暗而偏缘的视野从不可同日而语。——胡里奥·科塔萨尔
-阿尔特是阿根廷现代小说之父，他是最重要、最伟大的阿根廷小说家。——里卡多·皮格利亚
-如果这些海岸上有人能被称为文学天才的话，那一定是罗伯特·阿尔特……我在谈论一个将在时间长河中留下名字的小说家……难以置信，他还不为当今大众所熟知。——胡安·卡洛斯·奥内蒂
-——————————
-美洲西班牙语文学的另一重要特征即是它永恒的见证：暴力与不公平的见证，集体与个体的见证，现实与虚构的见证，往昔与现今的见证。在美洲，写作总是兼有诗意与政治的功能，写作从来不是一种无谓的游戏，即便在表面看来最形式化的表达中，它也从不逃遁于幻觉中。 ——《理想藏书》
-      </text> -->
       <text class='summary'>{{newsList[0].fields.introduce}}
       </text>
     </view>

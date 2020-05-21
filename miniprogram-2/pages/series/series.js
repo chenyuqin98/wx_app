@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    newList:[],
     windowHeight:0,
     scrollViewHeight:0,
     headerHeight:0,
+    src:'',
     series:"好望角书系",
     print:"浙江人民出版社",
     info: "打开一扇新窗,世界与你所知不一样。\n 非洲南部“好望角”本名“风暴角”，海浪汹涌，风暴不断。1488年2月，当葡萄牙航海家迪亚士的船队抵达这片海域时，恰风和日丽，船员们惊异地凝望着这个隐藏了许多个世纪的壮美岬角，随船历史学家巴若斯记录了这一时刻：“我们看见的不仅是一个海角，而是一个新的世界！”出版者以“好望角”命名这个书系，就是希望开一扇新窗，和读者们一起阅读一个不一样的世界。"
@@ -17,7 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var id = options.id
+    this.setData({
+      series:options.name,
+      src:options.src
+    })
     console.log(id)
     wx.getSystemInfo({
       success:(res)=> {
@@ -47,6 +54,27 @@ Page({
         scrollViewHeight: scrollViewHeight
       });
     });
+    let that = this
+    wx.request({
+      url: 'http://47.102.216.186/wx/show_one_recommend/',
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      data: {
+        series_id: id
+      },
+      method: 'GET',
+      success: function (res) {
+        var json = JSON.parse(res.data)
+        that.setData({
+          newList: json
+        })
+        console.log(that.data.newList)
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   },
 
   /**

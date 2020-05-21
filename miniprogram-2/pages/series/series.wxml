@@ -1,7 +1,7 @@
 <!--pages/series/series.wxml-->
 <view class="series_top" id="header">
   <view class="image_box">
-    <image src="../../assets/photos/1000.jpg" mode="aspectFit"></image>
+    <image src="{{src}}" mode="aspectFit"></image>
   </view>
   <view class="info">
     <text class="series">丛书：{{series}}</text>
@@ -11,32 +11,13 @@
 </view>
 
 <scroll-view scroll-y='true'  style="height: {{scrollViewHeight}}px" class="series_body">
-  <book bookname='独霸中东'
-        picture='https://img9.doubanio.com/view/subject/l/public/s33523084.jpg'
-        author='雅科夫•卡茨(Yaakov Katz)'
-        isbn='9787213095009'
-        introduction='·从无人机到卫星，从导弹防御系统到网络战，以色列在将新技术应用于现代战场方面一直走在世界前列。《独霸中东：以色列的军事强国密码》为我们展示了这个仅有800多万人口的小国是如何长期身处战争环境而不断适应战争形式的变化，并成为21世纪的新型强国的。当然，以色列的“强”并不在体量，而在创新和效率上。'/>
-   <book bookname='日本人为何选择了战争'
-        picture='https://img9.doubanio.com/view/subject/l/public/s33456165.jpg'
-        author='加藤阳子'
-        isbn='9787213092572'
-        introduction='从甲午战争到日俄战争，直到二战战败，日本人缘何一次次走向战争？上至世界顶尖的优秀人才，下至普通的日本百姓，为何认定“唯有战争才是出路”？东京大学历史学教授加藤阳子通过层层推进的多维分析，深入浅出地探究了当时日本为政者和国民如何看待世界局势、为何每一次都最终选择了战争。'/>
-    <book bookname='征服与革命中的阿拉伯人'
-        picture='https://img9.doubanio.com/view/subject/l/public/s33318165.jpg'
-        author='尤金·罗根'
-        isbn='9787213092459'
-        introduction='阿拉伯世界的历史是一个关于殖民、战争和抵抗的血腥的故事，也是一个充满创造力的多样、动人的故事。在这部开创性的雅俗共赏的著作中，屡获殊荣的牛津大学历史学家尤金•罗根广泛利用五个世纪的阿拉伯资料，将阿拉伯人的经历放在其关键的历史背景之中，从阿拉伯人自己的视角加以客观呈现。'/>
-    <book bookname='被掩盖的原罪'
-        picture='https://img1.doubanio.com/view/subject/l/public/s32266179.jpg'
-        author='爱德华.巴普蒂斯特'
-        isbn='9787213091209'
-        introduction='巴普蒂斯特结合奴隶的口述、种植园的相关记录，以及报纸、政客、企业家、逃亡奴隶的有关陈述，对美国历史作了全新而又大胆的解读。他让读者认识到美国霸权深处的暴力，以及终结了奴隶制的生存欲望和反抗，而正是后者，创造了支撑美国zui深层次自由梦想的文化。'/>
-    <book bookname='以色列'
-        picture='https://img3.doubanio.com/view/subject/l/public/s29866441.jpg'
-        author='丹尼尔·戈迪斯'
-        isbn='9787213087981'
-        introduction='戈迪斯带我们重温以色列历史中的 个个里程碑式事件，向我们介绍 位位凭借满腔热血和强大灵魂在关键时刻改变國家命运的关键人物。他既向我们展示了以色列是如何成为一个文化、经济和军事强国的，也指出了这个國家犯下的错误，追溯了其在国际上长期受到孤立的根源。戈迪斯清晰而全面地证明，以色列最主要的目的和最重大的成就是实现犹太民族在现代的重生。本书探究的正是这个民族和國家的灵魂。'/>
-  <book/>
+  <view wx:for='{{newList}}'>
+    <book bookname='{{item.fields.bookname}}'
+        picture='http://47.102.216.186/wx/media/{{item.fields.cover}}'
+        author='{{item.fields.author}}'
+        isbn='{{item.fields.isbn}}'
+        introduction='{{item.fields.introduce}}'/>  
+  </view>
 </scroll-view>
 
 

@@ -1,66 +1,63 @@
 // pages/collect/collect.js
+const app = getApp()
+import request from '../../utils/network.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    number:6
+    number:'',
+    newList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let json =''
+    let json1 = ''
+    var array =[]
+    request({
+      url: 'http://47.102.216.186/wx/show_favo/',
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      data: {
+        user_id: app.globalData.classifyid,
+      }
+    }).then(res=>{
+        json = JSON.parse(res.data)
+        this.setData({
+          number:json.length
+        })
+        for (let i = 0; i < json.length; i++) {
+          request({
+            url: 'http://47.102.216.186/wx/search_detail/',
+            method: 'GET',
+            data: {
+              id: json[i].fields.books
+            }
+          }).then(res => {
+            json1 = JSON.parse(res.data)
+            array[i]=json1[0]
+            var item = 'newList[' + i + ']'
+            this.setData({
+              [item]:json1[0]
+            })
+            console.log(this.data)
+          }).catch(err => {
+            console.log(err)
+          })
+        }
+    }).catch(err=>{
+      console.log(err)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  toBook: function (e) {
+    wx.navigateTo({
+      url: '/pages/details/details?pk='+e.currentTarget.dataset.pk,
+    })
   }
 })

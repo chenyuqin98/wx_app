@@ -1,24 +1,25 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/test/test",
+    "pages/list/list",
+    "pages/upload/upload",
     "pages/collect/collect",
     "pages/history/history",
     "pages/series/series",
-    "pages/list/list",
     "pages/search/search",
     "components/history/history",
     "pages/home/home",
     "components/collected/collected",
     "pages/details/details",
     "components/result/result",
-    "pages/upload/upload",
     "pages/index/index",
     "components/book/book",
     "pages/register/register",
     "pages/logs/logs",
     "pages/about/about",
-    "pages/test/test"
-    ],
+    "pages/recommand/recommand"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#B47157",

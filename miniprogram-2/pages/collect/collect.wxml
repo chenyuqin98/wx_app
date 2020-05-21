@@ -3,30 +3,11 @@
   <text>共收藏{{number}}本书</text>
 </view>
 <view class="bookList">
-   <collected title='局外人'
-              author='阿尔贝·加缪'
-              ISBN='9787532751471'
-              publisher='译林出版社'
-              cover='https://img9.doubanio.com/view/subject/s/public/s4468484.jpg'/>
-   <collected title='一个陌生女人的来信'
-              author='斯蒂格·茨威格'
-              ISBN='9787532741571'
-              publisher='上海译文出版社'
-              cover='https://img1.doubanio.com/view/subject/s/public/s2611329.jpg'/>
-   <collected title='东言西语'
-              author='郑子宁'
-              ISBN='9787546814933'
-              publisher='敦煌文艺出版社'
-              cover='https://img1.doubanio.com/view/subject/s/public/s33612958.jpg'/>
-   <collected title='爱神之泪'
-              author='乔治•巴塔耶'
-              ISBN='9787305223693'
-              publisher='南京大学出版社'
-              cover='https://img3.doubanio.com/view/subject/s/public/s33601161.jpg'/>
-   <collected title='万有引力之虹'
-              author='托马斯·品钦'
-              ISBN='9787544776660'
-              publisher='译林出版社'
-              cover='https://img9.doubanio.com/view/subject/s/public/s33609726.jpg'/>
-   <collected/>
+   <view wx:for="{{newList}}" data-pk="{{item.pk}}" bindtap="toBook">
+     <collected title='{{item.fields.title}} '
+              author='{{item.fields.author}}'
+              ISBN='{{item.fields.year}}'
+              publisher='{{item.fields.publisher}}'
+              cover='{{item.fields.cover}}'/> 
+   </view>
 </view>

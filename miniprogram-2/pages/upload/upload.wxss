@@ -14,6 +14,8 @@
   padding-bottom: 20rpx;
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
 
 }
 .header{
@@ -58,41 +60,41 @@
   background-color: white;
   border-radius: 10rpx;
 }
+.form-file{
+  width: 750rpx
+}
+.form-file text{
+  font-size: 20rpx;
+  color: wheat;
+  margin-left: 30rpx;
+  display: block
+}
+.form-file textarea{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  height: 50rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
 .form-cover text{
   font-size: 20rpx;
   color: wheat;
   margin-left: 30rpx;
 }
-.weui-uploader__bd{
-  margin-left: 30rpx;
+.form-cover{
+  width: 750rpx
 }
-.form-file{
-  width: 750rpx;
-  height: 80rpx;
+.form-cover textarea{
   margin-left: 30rpx;
   margin-right: 30rpx;
-  display: grid;
-  grid-template-columns: 3fr 1fr
-}
-.form-file view{
+  width: 690rpx;
+  height: 50rpx;
   background-color: white;
   border-radius: 10rpx;
-  width: 510rpx;
-  margin-right: 10rpx;
-  font-size: 26rpx;
-  line-height: 80rpx;
-  overflow: scroll;
 }
-.form-file .Choosebtn{
-  width: 120rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  text-align: center;
-  margin-right: 30rpx;
-  margin-left:0;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-  font-size: 20rpx;
+.weui-uploader__bd{
+  margin-left: 30rpx;
 }
 #title {
 	width:30%;
@@ -121,11 +123,6 @@ label:after {
 }
 .active:after {
 	width:calc(100% - 2px)
-}
-.forget{
-  font-size: 20rpx;
-  color: wheat;
-  margin-left: 30rpx;
 }
 .submit{
   width: 450rpx;
